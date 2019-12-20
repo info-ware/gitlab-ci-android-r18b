@@ -4,7 +4,7 @@
 # https://hub.docker.com/r/infoware/gitlab-ci-android-r18b/
 #
 
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 MAINTAINER infoware <github@infoware.de>
 
 # must be updated in case of new versions
@@ -79,6 +79,8 @@ RUN mkdir -p $ANDROID_HOME/licenses/ \
   && echo "84831b9409646a918e30573bab4c9c91346d8abd\n504667f4c0de7af1a06de9f4b1727b84351f2910" > $ANDROID_HOME/licenses/android-sdk-preview-license
 
 ADD packages.txt /sdk
+RUN echo "2" | update-alternatives --config java
+
 RUN mkdir -p /root/.android && \
   touch /root/.android/repositories.cfg && \
   ${ANDROID_HOME}/tools/bin/sdkmanager --update 
