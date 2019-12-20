@@ -1,14 +1,14 @@
 #
 # GitLab CI: Android v0.1
 #
-# https://hub.docker.com/r/infoware/gitlab-ci-android/
+# https://hub.docker.com/r/infoware/gitlab-ci-android-r18b/
 #
 
 FROM ubuntu:17.10
 MAINTAINER infoware <github@infoware.de>
 
 # must be updated in case of new versions
-ENV ANDROID_NDK_VERSION r16b
+ENV ANDROID_NDK_VERSION r18b
 
 # must be updated in case of new versions
 ENV VERSION_SDK_TOOLS "4333796"
