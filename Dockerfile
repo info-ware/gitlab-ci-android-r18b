@@ -120,5 +120,6 @@ RUN rm -rf /opt/android-ndk-tmp
 # add to PATH
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}
 
-
+# add ccache to PATH
+ENV PATH /usr/lib/ccache:${PATH}
 
