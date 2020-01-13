@@ -101,7 +101,6 @@ RUN chmod +x /scripts/compare_files.sh
 ADD lint-up.rb /scripts
 
 
-
 # ------------------------------------------------------
 # --- Android NDK
 
@@ -119,6 +118,12 @@ RUN rm -rf /opt/android-ndk-tmp
 
 # add to PATH
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}
+
+# SETTINGS FOR GRADLE
+ADD https://services.gradle.org/distributions/gradle-5.1.1-all.zip /tmp
+RUN mkdir -p /opt/gradle/wrapper/dists
+RUN mv /tmp/gradle-5.1.1-all.zip /opt/gradle/gradle-5.1.1/wrapper/dists
+ENV GRADLE_USER_HOME=/opt/gradle/gradle-5.1.1
 
 # add ccache to PATH
 ENV PATH /usr/lib/ccache:${PATH}
