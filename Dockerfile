@@ -119,11 +119,15 @@ RUN rm -rf /opt/android-ndk-tmp
 # add to PATH
 ENV PATH ${PATH}:${ANDROID_NDK_HOME}
 
-# SETTINGS FOR GRADLE
+# SETTINGS FOR GRADLE 5.1.1
 ADD https://services.gradle.org/distributions/gradle-5.1.1-all.zip /tmp
-RUN mkdir -p /opt/gradle/gradle-5.1.1/wrapper/dists
-RUN mv /tmp/gradle-5.1.1-all.zip /opt/gradle/gradle-5.1.1/wrapper/dists
+RUN mkdir -p /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg
+RUN cp /tmp/gradle-5.1.1-all.zip /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/
+RUN unzip /tmp/gradle-5.1.1-all.zip -d /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg
+RUN touch /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1-all.ok
+RUN touch /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1-all.lck
 ENV GRADLE_USER_HOME=/opt/gradle/gradle-5.1.1
+#RUN /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1/bin/gradle
 
 # add ccache to PATH
 ENV PATH /usr/lib/ccache:${PATH}
