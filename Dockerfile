@@ -127,7 +127,7 @@ RUN cp /tmp/gradle-5.1.1-all.zip /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5
 RUN unzip /tmp/gradle-5.1.1-all.zip -d /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg
 RUN touch /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1-all.ok
 RUN touch /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1-all.lck
-RUN /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1/bin/gradle
+#RUN /opt/gradle/gradle-5.1.1/wrapper/dists/gradle-5.1.1-all/97z1ksx6lirer3kbvdnh7jtjg/gradle-5.1.1/bin/gradle
 
 # SETTINGS FOR GRADLE 5.4.1
 ADD https://services.gradle.org/distributions/gradle-5.4.1-all.zip /tmp
@@ -136,7 +136,7 @@ RUN cp /tmp/gradle-5.4.1-all.zip /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5
 RUN unzip /tmp/gradle-5.4.1-all.zip -d /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5.4.1-all/3221gyojl5jsh0helicew7rwx
 RUN touch /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5.4.1-all/3221gyojl5jsh0helicew7rwx/gradle-5.4.1-all.ok
 RUN touch /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5.4.1-all/3221gyojl5jsh0helicew7rwx/gradle-5.4.1-all.lck
-RUN /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5.4.1-all/3221gyojl5jsh0helicew7rwx/gradle-5.4.1/bin/gradle
+#RUN /opt/gradle/gradle-5.4.1/wrapper/dists/gradle-5.4.1-all/3221gyojl5jsh0helicew7rwx/gradle-5.4.1/bin/gradle
 
 
 ENV GRADLE_USER_HOME=/opt/gradle
