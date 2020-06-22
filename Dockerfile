@@ -42,6 +42,7 @@ RUN apt-get -qq update && \
       unzip \
       openssh-client \
       sshpass \
+      ftp \
       lftp \
       doxygen \
       doxygen-latex \
