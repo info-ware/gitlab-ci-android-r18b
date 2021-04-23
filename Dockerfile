@@ -78,7 +78,7 @@ ENV LANG en_US.UTF-8
 #    rm -v /sdk.zip
 
 # Download current command line tools
-RUN curl -s https://dl.google.com/android/repository/commandlinetools-linux-${VERSION_SDK_TOOLS}_latest.zip -O sdk.zip
+RUN curl -s https://dl.google.com/android/repository/commandlinetools-linux-${VERSION_SDK_TOOLS}_latest.zip -O sdk.zip \
     unzip /sdk.zip -d /sdk && \
     rm -v /sdk.zip
 
