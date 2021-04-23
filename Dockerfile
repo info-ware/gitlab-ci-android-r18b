@@ -11,10 +11,12 @@ MAINTAINER infoware <github@infoware.de>
 ENV ANDROID_NDK_VERSION r18b
 
 # must be updated in case of new versions
-#ENV VERSION_SDK_TOOLS "4333796"
+ENV VERSION_SDK_TOOLS=6858069
 
 ENV ANDROID_NDK_HOME /opt/android-ndk
 ENV ANDROID_HOME "/sdk"
+ENV ANDROID_SDK_ROOT="/sdk"
+
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -70,8 +72,13 @@ ENV LANG en_US.UTF-8
 ###################################
 # Android SDK
 
-# Download current SDK tools
-RUN curl -s https://dl.google.com/android/repository/platform-tools_r28.0.0-linux.zip > /sdk.zip && \
+# Download current Platform tools
+#RUN curl -s https://dl.google.com/android/repository/platform-tools_r28.0.0-linux.zip > /sdk.zip && \
+#    unzip /sdk.zip -d /sdk && \
+#    rm -v /sdk.zip
+
+# Download current command line tools
+RUN curl -s https://dl.google.com/android/repository/commandlinetools-linux-${VERSION_SDK_TOOLS}_latest.zip -O sdk.zip
     unzip /sdk.zip -d /sdk && \
     rm -v /sdk.zip
 
