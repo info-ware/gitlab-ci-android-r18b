@@ -11,7 +11,7 @@ MAINTAINER infoware <github@infoware.de>
 ENV ANDROID_NDK_VERSION r18b
 
 # must be updated in case of new versions
-ENV VERSION_SDK_TOOLS "4333796"
+#ENV VERSION_SDK_TOOLS "4333796"
 
 ENV ANDROID_NDK_HOME /opt/android-ndk
 ENV ANDROID_HOME "/sdk"
@@ -71,7 +71,7 @@ ENV LANG en_US.UTF-8
 # Android SDK
 
 # Download current SDK tools
-RUN curl -s https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_SDK_TOOLS}.zip > /sdk.zip && \
+RUN curl -s https://dl.google.com/android/repository/platform-tools_r28.0.0-linux.zip > /sdk.zip && \
     unzip /sdk.zip -d /sdk && \
     rm -v /sdk.zip
 
@@ -149,3 +149,4 @@ ENV PATH /usr/lib/ccache:${PATH}
 # use ccache for NDK builds
 ENV NDK_CCACHE /usr/bin/ccache
 
+ENV CCACHE_DIR /mnt/ccache
