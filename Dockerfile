@@ -72,15 +72,14 @@ ENV LANG en_US.UTF-8
 ###################################
 # Android SDK
 
-# Download current Platform tools
-#RUN curl -s https://dl.google.com/android/repository/platform-tools_r28.0.0-linux.zip > /sdk.zip && \
-#    unzip /sdk.zip -d /sdk && \
-#    rm -v /sdk.zip
-
 # Download current command line tools
 RUN curl -s "https://dl.google.com/android/repository/commandlinetools-linux-${VERSION_SDK_TOOLS}_latest.zip" -o /sdk.zip
 RUN unzip /sdk.zip -d /sdk
 RUN rm -v /sdk.zip
+
+# Download current Platform tools
+RUN curl -s https://dl.google.com/android/repository/platform-tools_r31.0.2-linux.zip > /sdk/platform-tools.zip && \
+    unzip /sdk/platform-tools.zip -d /sdk 
 
 RUN mkdir -p $ANDROID_HOME/licenses/ \
   && echo "8933bad161af4178b1185d1a37fbf41ea5269c55\nd56f5187479451eabf01fb78af6dfcb131a6481e" > $ANDROID_HOME/licenses/android-sdk-license \
